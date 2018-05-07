@@ -4,6 +4,9 @@ set $mod Mod4
 # Font for window titles.
 font pango:monospace 8
 
+# Hide window title bar
+new_window 1pixel
+
 # Start terminal
 bindsym $mod+Return exec urxvt
 
