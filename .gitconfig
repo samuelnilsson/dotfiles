@@ -3,3 +3,5 @@
 	name = Samuel Nilsson
 [core]
 	editor = vim
+[color]
+	ui = true
