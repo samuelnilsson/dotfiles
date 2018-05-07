@@ -26,10 +26,10 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # Split in horizontal orientation
-bindsym $mod+Alt+h split h
+bindsym $mod+b split h
 
 # Split in vertical orientation
-bindsym $mod+Alt+v split v
+bindsym $mod+v split v
 
 # Enter fullscreen mode
 bindsym $mod+f fullscreen toggle
