@@ -64,9 +64,6 @@ else
 	RESET="\033[m"
 fi
 
-# Use no more than 16 colors
-export TERM=xterm
-
 # Colorize prompt
 PS1="\[$ORANGE\][\t]\[$BLUE\][\h]\[$GREEN\][\u] \[$CYAN\]\w\n\[$GREEN\]\$ \[$RESET\]"
 
