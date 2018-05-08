@@ -99,3 +99,6 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+# Start composite manager to avoid tearing
+exec compton
