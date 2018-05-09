@@ -64,11 +64,16 @@ else
 	RESET="\033[m"
 fi
 
-# Colorize prompt
-PS1="\[$ORANGE\][\t]\[$BLUE\][\h]\[$GREEN\][\u] \[$CYAN\]\w\n\[$GREEN\]\$ \[$RESET\]"
-
 # Color exports
 export GREP_OPTIONS='--color=auto'
 
 # Color aliases
 alias ls='ls --color=always'
+
+# Prompt
+#-------------------------------------------------
+git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
+}
+
+PS1="\[$ORANGE\][\t]\[$BLUE\][\h]\[$GREEN\][\u]\[$YELLOW\]\$(git_branch) \[$CYAN\]\w\n\$ \[$RESET\]"
