@@ -1,5 +1,13 @@
 #!/bin/bash
 
+is_set() {
+	if [ -z "$1" ]; then
+		false
+	else
+		true
+	fi
+}
+
 # If not running interactively, don't do anything
 #-------------------------------------------------
 [[ $- != *i* ]] && return
@@ -8,6 +16,15 @@
 #-------------------------------------------------
 export EDITOR=vim
 export VISUAL=vim
+
+# Ssh server aliases
+#-------------------------------------------------
+if is_set "$SERVER_USERNAME" && is_set "$SERVER_HOST" && is_set "$SERVER_SSH_PORT"; then
+	alias server='ssh $SERVER_USERNAME@$SERVER_HOST -p $SERVER_SSH_PORT'
+fi
+if is_set "$HTPC_USERNAME" && is_set "$HTPC_HOST" && is_set "$HTPC_SSH_PORT"; then
+	alias htpc='ssh $HTPC_USERNAME@$HTPC_HOST -p $HTPC_SSH_PORT'
+fi
 
 # Add colors to command output
 #-------------------------------------------------

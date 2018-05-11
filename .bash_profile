@@ -1,11 +1,23 @@
 #!/bin/bash
 
+is_set() {
+	if [ -z "$1" ]; then
+		return 0
+	else
+		return 1
+	fi
+}
+
 # Load environment variables
 source ~/.bash_variables
 
 # Git configuration
-git config --global user.name "$NAME"
-git config --global user.email "$EMAIL"
+if is_set "$NAME"; then
+	git config --global user.name "$NAME"
+fi
+if is_set "$EMAIL"; then
+	git config --global user.email "$EMAIL"
+fi
 git config --global core.editor "vim"
 git config --global color.ui "true"
 
