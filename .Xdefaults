@@ -1,6 +1,6 @@
 ! General
 URxvt.internalBorder:    0
-URxvt.lineSpace:         0
+URxvt.lineSpace:         3
 
 ! Font
 URxvt.allow_bold:        true
