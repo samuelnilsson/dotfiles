@@ -41,5 +41,5 @@ cpu_usage {
 }
 
 run_watch VPN {
-	pidfile = "/var/run/openvpn-client/pid"
+	pidfile = "/sys/class/net/tun0/dev_id"
 }
