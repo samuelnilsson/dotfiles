@@ -17,6 +17,10 @@ is_set() {
 export EDITOR=vim
 export VISUAL=vim
 
+# Set TERM
+#-------------------------------------------------
+export TERM='xterm-256color'
+
 # Ssh server aliases
 #-------------------------------------------------
 if is_set "$SERVER_USERNAME" && is_set "$SERVER_HOST" && is_set "$SERVER_SSH_PORT"; then
