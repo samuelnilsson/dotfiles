@@ -134,6 +134,12 @@ bar {
 # Start composite manager to avoid tearing
 exec compton
 
+# Start i3lock
+exec --no-startup-id xss-lock -- i3lock -n -i $HOME/.wallpaper.png &
+
+# Set wallpaper
+exec --no-startup-id feh --bg-fill ~/.wallpaper.png
+
 # Autostart applications
 exec --no-startup-id i3-msg 'workspace 9:Mail; exec thunderbird'
 exec --no-startup-id i3-msg 'workspace 10:Chat; exec pidgin'
