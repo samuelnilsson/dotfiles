@@ -86,7 +86,7 @@ else
 fi
 
 # Color exports
-export GREP_OPTIONS='--color=auto'
+alias grep='grep --color=auto'
 
 # Color aliases
 alias ls='ls --color=always'
