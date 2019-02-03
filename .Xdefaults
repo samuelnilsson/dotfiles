@@ -4,8 +4,10 @@ URxvt.lineSpace:         3
 
 ! Font
 URxvt.allow_bold:        true
-URxvt*font:              xft:DejaVu Sans Mono:style=Book:pixelsize=14
-URxvt*boldFont:          xft:DejaVu Sans Mono:style=Book:pixelsize=14
+URxvt*font:              xft:DejaVu Sans Mono:style=Book:pixelsize=14,\
+						 xft:Source Han Sans JP:pixelsize=14
+URxvt*boldFont:          xft:DejaVu Sans Mono:style=Book:pixelsize=14,\
+						 xft:Source Han Sans JP:style=Bold:pixelsize=14
 
 ! Scrollbar
 URxvt.scrollStyle:       rxvt
