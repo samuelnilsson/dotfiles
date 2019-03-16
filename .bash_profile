@@ -10,6 +10,7 @@ is_set() {
 
 # Load environment variables
 source ~/.bash_variables
+export PATH=$PATH:~/.gem/ruby/2.6.0/bin
 
 # Git configuration
 if is_set "$NAME"; then
