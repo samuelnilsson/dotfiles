@@ -22,7 +22,7 @@ alias vim='nvim'
 
 # Set TERM
 #-------------------------------------------------
-export TERM='rxvt-256color'
+export TERM='xterm-kitty'
 
 # Ssh server aliases
 #-------------------------------------------------
