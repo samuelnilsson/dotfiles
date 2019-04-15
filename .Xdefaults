@@ -4,9 +4,9 @@ URxvt.lineSpace:         3
 
 ! Font
 URxvt.allow_bold:        true
-URxvt*font:              xft:DejaVuSansMono Nerd Font:style=Book:pixelsize=14,\
+URxvt*font:              xft:Fira Code:style=Book:pixelsize=14,\
 						 xft:Source Han Sans JP:pixelsize=14
-URxvt*boldFont:          xft:DejaVuSansMono Nerd Font:style=Bold:pixelsize=14,\
+URxvt*boldFont:          xft:Fira Code:style=Bold:pixelsize=14,\
 						 xft:Source Han Sans JP:style=Bold:pixelsize=14
 
 ! Scrollbar
