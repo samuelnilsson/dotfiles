@@ -1,33 +1,32 @@
 #!/bin/bash
 
 is_set() {
-	if [ -z "$1" ]; then
-		return 0
-	else
+	if [ -z "$1" ]
+	then
 		return 1
+	else
+		return 0
 	fi
 }
 
 # Load environment variables
 source ~/.bash_variables
 
-export NVIM_GTK_NO_HEADERBAR=1
-export NVIM_GTK_PREFER_DARK_THEME=1
-export NVIM_GTK_NO_WINDOW_DECORATION=1
-
-export PATH=$PATH:~/.gem/ruby/2.6.0/bin
-
 # Git configuration
+echo is_set $NAME
 if is_set "$NAME"; then
 	git config --global user.name "$NAME"
 fi
 if is_set "$EMAIL"; then
 	git config --global user.email "$EMAIL"
 fi
-git config --global core.editor "vim"
+
+export ALSA_CARD=PCH
+
+git config --global core.editor "nvim"
 git config --global color.ui "true"
 
-# Start X if there is a display
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-	exec startx
+# Start sway
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+	XKB_DEFAULT_LAYOUT=us exec sway
 fi
