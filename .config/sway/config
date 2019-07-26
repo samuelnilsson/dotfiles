@@ -151,6 +151,7 @@ exec --no-startup-id dunst
 
 # Input configuration
 input * xkb_layout "se"
+input * xkb_options "caps:escape"
 
 input * {
 	scroll_method edge
