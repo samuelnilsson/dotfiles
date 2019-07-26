@@ -6,7 +6,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
     ellipsize = middle
     follow = mouse
-    font = DejaVu 9
+    font = Fira Code 9
     force_xinerama = false
     format = "<b>%s</b>\n%b"
     frame_color = "#aaaaaa"
