@@ -2,9 +2,9 @@
 
 is_set() {
 	if [ -z "$1" ]; then
-		true
-	else
 		false
+	else
+		true
 	fi
 }
 
