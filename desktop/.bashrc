@@ -45,7 +45,7 @@ git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
 }
 
-PS1="\e[40;0;31m[\t]\e[40;0;34m[\h]\e[40;0;33m[\u]\e[40;0;35m\$(git_branch) \e[40;0;36m\w\e[40;0;37m\n↳ \[$RESET\]"
+PS1="\e[40;0;31m[\t]\e[40;0;34m[\h]\e[40;0;33m[\u]\e[40;0;35m\$(git_branch) \e[40;0;36m\w\e[40;0;37m\n﬌ \[$RESET\]"
 
 # Npm install directory
 #-------------------------------------------------
