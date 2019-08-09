@@ -20,7 +20,7 @@ set $base0F #a3685a
 set $mod Mod4
 
 # Font for window titles.
-font pango:Fira Code 8
+font pango:FuraCode Nerd Font 8
 
 # Hide window title bar
 default_border pixel 1
@@ -122,9 +122,9 @@ bindcode 233 exec "light -A 10"
 
 # Start i3bar
 bar {
-        status_command i3status
+        status_command py3status
         position top
-        font pango:Fira Code 10
+        font pango:FuraCode Nerd Font 10
 
         colors {
                 background              $base00
@@ -150,11 +150,11 @@ client.background       $base07
 exec --no-startup-id xss-lock -- swaylock -n -i $HOME/.wallpaper.png &
 
 # Set wallpaper
-exec --no-startup-id feh --bg-fill ~/.wallpaper.png
+exec swaybg -i ~/.wallpaper.png
 
 # Autostart applications
-exec --no-startup-id i3-msg 'workspace 10:Mail; exec thunderbird'
-exec --no-startup-id dunst
+exec --no-startup-id swaymsg 'workspace 10:Mail; exec thunderbird'
+exec --no-startup-id mako
 
 # Input configuration
 input * xkb_layout "se"
