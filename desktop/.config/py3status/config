@@ -9,7 +9,9 @@ py3status {
     nagbar_font = 'pango:FuraCode Nerd Font 10'
 }
 
+order += "lastfm"
 order += "arch_updates"
+order += "mail"
 order += "volume master"
 order += "sysdata cpu"
 order += "sysdata mem"
@@ -58,4 +60,30 @@ sysdata mem {
 run_watch VPN {
 	pidfile = "/sys/class/net/tun0/dev_id"
     format = '嬨'
+}
+
+# From https://github.com/samuelnilsson/py3status-lastfm
+lastfm {
+    format = ' {artist} - {title}'
+    format_stopped = ' nothing playing'
+    username = env(LASTFM_USERNAME)
+    api_key = env(LASTFM_API_KEY)
+    cache_timeout = 10
+}
+
+mail {
+    format = '[\?color=mail&show  {mail}]'
+    thresholds = [(1, 'good'), (5, 'degraded'), (15, 'bad')]
+    allow_urgent = False
+    accounts = {
+        'imap': [
+            {
+                'name': 'gmail',
+                'user': env(EMAIL),
+                'password': env(GMAIL_PASSWORD),
+                'server': 'imap.gmail.com',
+                'port': 993
+            }
+        ]
+    }
 }
