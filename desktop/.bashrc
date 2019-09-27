@@ -49,8 +49,8 @@ PS1="\e[40;0;31m[\t]\e[40;0;34m[\h]\e[40;0;33m[\u]\e[40;0;35m\$(git_branch) \e[4
 
 # Npm install directory
 #-------------------------------------------------
-export PATH="${HOME}/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/go/bin:$PATH"
 
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config
-export MANPATH="${HOME}/.local/share/man:$(manpath)"
+export MANPATH="$HOME/.local/share/man:$(manpath)"
