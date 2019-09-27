@@ -13,7 +13,6 @@ is_set() {
 source ~/.bash_variables
 
 # Git configuration
-echo is_set $NAME
 if is_set "$NAME"; then
 	git config --global user.name "$NAME"
 fi
