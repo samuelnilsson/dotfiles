@@ -25,6 +25,10 @@ export ALSA_CARD=PCH
 git config --global core.editor "nvim"
 git config --global color.ui "true"
 
+# Start gnome keyring
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
 # Start sway
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	XKB_DEFAULT_LAYOUT=us exec sway
