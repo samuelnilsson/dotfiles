@@ -1,4 +1,19 @@
-#!/bin/bash
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+setopt autocd extendedglob nomatch notify
+unsetopt beep
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/samuel/.zshrc'
+
+autoload -Uz compinit
+compinit
+
+autoload -Uz promptinit
+promptinit
 
 is_set() {
 	if [ -z "$1" ]; then
@@ -41,15 +56,17 @@ alias ls='ls --color=always'
 
 # Prompt
 #-------------------------------------------------
-git_branch() {
+function git_branch {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
 }
 
-PS1="\e[40;0;31m[\t]\e[40;0;34m[\h]\e[40;0;33m[\u]\e[40;0;35m\$(git_branch) \e[40;0;36m\w\e[40;0;37m\n﬌ \[$RESET\]"
+NEWLINE=$'\n'
+PROMPT="%F{blue}[]%F{red}[%M]%F{yellow}[%n]%F{magenta}$(git_branch) %F{cyan}%~${NEWLINE}%F{white}﬌ "
 
 # Npm install directory
 #-------------------------------------------------
-export PATH="$HOME/.local/bin:$HOME/go/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/go/bin:$PATH:$HOME/.dotnet/tools"
+export MSBuildSDKsPath="/opt/dotnet/sdk/3.0.100/Sdks"
 
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config

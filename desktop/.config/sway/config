@@ -153,7 +153,7 @@ exec --no-startup-id xss-lock -- swaylock -n -i $HOME/.wallpaper.png &
 exec swaybg -i ~/.wallpaper.png
 
 # Autostart applications
-exec --no-startup-id swaymsg 'workspace 10:Mail; exec thunderbird'
+exec --no-startup-id swaymsg 'workspace 9:Mail; exec thunderbird'
 exec --no-startup-id mako
 exec --no-startup-id redshift
 
