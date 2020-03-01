@@ -24,3 +24,5 @@ source $ZSH/oh-my-zsh.sh
 
 autoload -U promptinit; promptinit
 prompt pure
+
+plugins=(zsh-autosuggestions)
