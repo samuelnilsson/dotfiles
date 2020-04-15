@@ -113,6 +113,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bindsym $mod+p exec "mpc toggle"
+
 # Fn keys
 bindcode 121 exec "amixer -q sset Master toggle"
 bindcode 122 exec "amixer -q sset Master 5%-"
@@ -120,11 +122,11 @@ bindcode 123 exec "amixer -q sset Master 5%+"
 bindcode 232 exec "light -U 10"
 bindcode 233 exec "light -A 10"
 
-# Start i3bar
 bar {
         status_command py3status
         position top
         font pango:FuraCode Nerd Font 10
+        tray_output none
 
         colors {
                 background              $base00
@@ -155,7 +157,8 @@ exec swaybg -i ~/.wallpaper.png
 # Autostart applications
 exec --no-startup-id swaymsg 'workspace 9:Mail; exec thunderbird'
 exec --no-startup-id mako
-exec --no-startup-id redshift
+exec --no-startup-id "nextcloud --background"
+exec --no-startup-id swaymsg 'workspace 8; exec ~/.local/bin/mpdcover'
 
 # GTK theming
 set $gnome-schema org.gnome.desktop.interface
