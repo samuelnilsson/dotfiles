@@ -116,9 +116,9 @@ bindsym $mod+r mode "resize"
 bindsym $mod+p exec "mpc toggle"
 
 # Fn keys
-bindcode 121 exec "amixer -q sset Master toggle"
-bindcode 122 exec "amixer -q sset Master 5%-"
-bindcode 123 exec "amixer -q sset Master 5%+"
+bindcode 121 exec "pamixer -t"
+bindcode 122 exec "pamixer -d 5"
+bindcode 123 exec "pamixer -i 5"
 bindcode 232 exec "light -U 10"
 bindcode 233 exec "light -A 10"
 

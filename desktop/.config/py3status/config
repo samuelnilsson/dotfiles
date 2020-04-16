@@ -1,8 +1,8 @@
 general {
-	colors = true
-	color_good = '#b5bd68'
-	color_bad = '#cc6666'
-	color_degraded = '#f0c674'
+    colors = true
+    color_good = '#b5bd68'
+    color_bad = '#cc6666'
+    color_degraded = '#f0c674'
 }
 
 py3status {
@@ -12,16 +12,16 @@ py3status {
 order += "lastfm"
 order += "arch_updates"
 order += "mail"
-order += "volume master"
+order += "volume_status"
 order += "sysdata cpu"
 order += "sysdata mem"
-order += "run_watch VPN"
+order += "vpn_status"
 order += "wifi"
 order += "battery_level"
-order += "tztime local"
+order += "clock"
 
 wifi {
-	format = "直 {ssid}|睊"
+    format = "直 {ssid}|睊"
 }
 
 battery_level {
@@ -29,18 +29,18 @@ battery_level {
     blocks = ''
     color_charging = '#f0c674'
     charging_character = ''
-	format = '{icon} {percent}%'
+    format = '{icon} {percent}%'
 }
 
-tztime local {
-	format = " %Y-%m-%d %H:%M:%S"
+clock {
+    format_time = " %Y-%m-%d %H:%M:%S"
 }
 
-volume master {
-	format = '墳 %volume'
-	format_muted = '%volume ﱝ'
-    device = 'default'
-    mixer = 'Master'
+volume_status {
+    blocks = '婢奄奔墳'
+    format = '{icon} {percentage}%'
+    format_muted = '婢 {percentage}%'
+    command = 'pactl'
 }
 
 arch_updates {
@@ -49,7 +49,7 @@ arch_updates {
 }
 
 sysdata cpu {
-	format = "﬙ %usage"
+    format = "﬙ %usage"
     format = "[\?color=cpu ﬙ {cpu_used_percent}%]"
 }
 
@@ -57,8 +57,9 @@ sysdata mem {
     format = "[\?color=mem  {mem_used_percent}%]"
 }
 
-run_watch VPN {
-	pidfile = "/sys/class/net/tun0/dev_id"
+vpn_status {
+    check_pid = True
+    pidfile = "/sys/class/net/tun0/dev_id"
     format = '嬨'
 }
 
