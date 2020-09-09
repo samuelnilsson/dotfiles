@@ -14,8 +14,9 @@ alias vim='nvim'
 export TERM='xterm-color'
 
 # Npm install directory
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.dotnet/tools:$PATH:$HOME/go/bin"
 export MANPATH="$HOME/.local/share/man:$(manpath):$MANPATH"
+export GOPATH="$HOME/go"
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
