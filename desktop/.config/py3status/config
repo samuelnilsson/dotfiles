@@ -7,21 +7,27 @@ general {
 
 py3status {
     nagbar_font = 'pango:FuraCode Nerd Font 10'
+    separator_block_width = 14
 }
 
-order += "lastfm"
+order += "mpd_status"
 order += "arch_updates"
 order += "mail"
 order += "volume_status"
 order += "sysdata cpu"
 order += "sysdata mem"
 order += "vpn_status"
+order += "whatismyip"
 order += "wifi"
 order += "battery_level"
 order += "clock"
 
 wifi {
     format = "直 {ssid}|睊"
+}
+
+whatismyip {
+    format = '{city}'
 }
 
 battery_level {
@@ -63,15 +69,6 @@ vpn_status {
     format = '嬨'
 }
 
-# From https://github.com/samuelnilsson/py3status-lastfm
-lastfm {
-    format = ' {artist} - {title}'
-    format_stopped = ' nothing playing'
-    username = env(LASTFM_USERNAME)
-    api_key = env(LASTFM_API_KEY)
-    cache_timeout = 10
-}
-
 mail {
     format = '[\?color=mail&show  {mail}]'
     thresholds = [(1, 'good'), (5, 'degraded'), (15, 'bad')]
@@ -87,4 +84,10 @@ mail {
             }
         ]
     }
+}
+
+mpd_status {
+    state_play = "契"
+    state_pause = ""
+    state_stop = "栗"
 }
