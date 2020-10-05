@@ -20,7 +20,7 @@ set $base0F #a3685a
 set $mod Mod4
 
 # Font for window titles.
-font pango:FuraCode Nerd Font 8
+font pango:FiraCode Nerd Font Mono 8
 
 # Hide window title bar
 default_border pixel 1
@@ -170,8 +170,9 @@ exec_always {
 }
 
 # Input configuration
-input * xkb_layout "se"
-input * xkb_options "caps:escape"
+input * xkb_layout "us"
+input * xkb_variant "intl"
+input * xkb_options caps:escape
 
 input * {
 	scroll_method edge
