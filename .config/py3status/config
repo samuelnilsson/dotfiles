@@ -6,28 +6,22 @@ general {
 }
 
 py3status {
-    nagbar_font = 'pango:FuraCode Nerd Font 10'
+    nagbar_font = 'pango:Fira Code Regular Nerd Font Complete 10'
     separator_block_width = 14
 }
 
 order += "mpd_status"
-order += "arch_updates"
+order += "fedora_updates"
 order += "mail"
 order += "volume_status"
 order += "sysdata cpu"
 order += "sysdata mem"
-order += "vpn_status"
-order += "whatismyip"
 order += "wifi"
 order += "battery_level"
 order += "clock"
 
 wifi {
-    format = "直 {ssid}|睊"
-}
-
-whatismyip {
-    format = '{city}'
+    format = "直  {ssid}|睊"
 }
 
 battery_level {
@@ -39,7 +33,7 @@ battery_level {
 }
 
 clock {
-    format_time = " %Y-%m-%d %H:%M:%S"
+    format_time = "  %Y-%m-%d %H:%M:%S"
 }
 
 volume_status {
@@ -49,9 +43,11 @@ volume_status {
     command = 'pactl'
 }
 
-arch_updates {
-    color = '#7cafc2'
-    format = ' {pacman}/{aur}'
+fedora_updates {
+    color_bad = '#7cafc2'
+    color_degraded = '#7cafc2'
+    color_good = '#7cafc2'
+    format = '  {updates}'
 }
 
 sysdata cpu {
@@ -63,14 +59,8 @@ sysdata mem {
     format = "[\?color=mem  {mem_used_percent}%]"
 }
 
-vpn_status {
-    check_pid = True
-    pidfile = "/sys/class/net/tun0/dev_id"
-    format = '嬨'
-}
-
 mail {
-    format = '[\?color=mail&show  {mail}]'
+    format = '[\?color=mail&show   {mail}]'
     thresholds = [(1, 'good'), (5, 'degraded'), (15, 'bad')]
     allow_urgent = False
     accounts = {

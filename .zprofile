@@ -10,7 +10,7 @@ is_set() {
 }
 
 # Load environment variables
-source ~/.bash_variables
+source ~/.zvariables
 
 # Git configuration
 if is_set "$NAME"; then
@@ -20,14 +20,13 @@ if is_set "$EMAIL"; then
 	git config --global user.email "$EMAIL"
 fi
 
-export ALSA_CARD=PCH
-
 git config --global core.editor "nvim"
 git config --global color.ui "true"
 
-# Start gnome keyring
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
+# Use wayland apps
+export MOZ_ENABLE_WAYLAND=1
+export KITTY_ENABLE_WAYLAND=1
+export BEMENU_BACKEND=wayland
 
 # Start sway
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
