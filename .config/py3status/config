@@ -28,7 +28,7 @@ battery_level {
     battery_id = 'all'
     blocks = ''
     color_charging = '#f0c674'
-    charging_character = ''
+    charging_character = ''
     format = '{icon} {percent}%'
 }
 
