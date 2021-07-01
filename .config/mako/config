@@ -1,7 +1,7 @@
 font=FuraCode Nerd Font 10
-background-color=#1d1f21
-text-color=#b4b7b4
-border-color=#373b41
+background-color=#282c34
+text-color=#565c64
+border-color=#3e4451
 border-size=10
 border-radius=5
 default-timeout=10000

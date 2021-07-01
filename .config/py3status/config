@@ -1,8 +1,9 @@
 general {
     colors = true
-    color_good = '#b5bd68'
-    color_bad = '#cc6666'
-    color_degraded = '#f0c674'
+	color = '#abb2bf'
+    color_good = '#98c379'
+    color_bad = '#e06c75'
+    color_degraded = '#e5c07b'
 }
 
 py3status {
@@ -27,7 +28,7 @@ wifi {
 battery_level {
     battery_id = 'all'
     blocks = ''
-    color_charging = '#f0c674'
+    color_charging = '#98c379'
     charging_character = ''
     format = '{icon} {percent}%'
 }
@@ -44,9 +45,9 @@ volume_status {
 }
 
 fedora_updates {
-    color_bad = '#7cafc2'
-    color_degraded = '#7cafc2'
-    color_good = '#7cafc2'
+    color_bad = '#61afef'
+    color_degraded = '#61afef'
+    color_good = '#61afef'
     format = '  {updates}'
 }
 
@@ -77,7 +78,7 @@ mail {
 }
 
 mpd_status {
-    state_play = "契"
-    state_pause = ""
-    state_stop = "栗"
+    state_play = ""
+    state_pause = ""
+    state_stop = ""
 }
