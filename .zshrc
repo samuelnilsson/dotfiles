@@ -13,9 +13,6 @@ alias vim='nvim'
 
 export TERM='xterm-color'
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
 export GOPATH="$HOME/go"
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
@@ -25,11 +22,16 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-fpath+=("/home/samuel/.nvm/versions/node/$(node --version)/lib/node_modules/pure-prompt/functions")
+fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
 
 plugins=(zsh-autosuggestions)
+
+export ANDROID_SDK=/opt/cmdline-tools
+export ANDROID_PATH=$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools
+export FLATPAK_PATH=/var/lib/flatpak/exports/bin
+export PATH=$PATH:~/bin:$GOPATH/bin:/opt/flutter/bin:/opt/cmdline-tools/bin:$ANDROID_PATH:$FLATPAK_PATH
 
 # Aliases for enabling wayland apps
 alias mpv='mpv --gpu-context=wayland'
