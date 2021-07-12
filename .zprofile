@@ -10,6 +10,7 @@ is_set() {
 }
 
 # Load environment variables
+# $NAME, $EMAIL
 source ~/.zvariables
 
 # Git configuration
